@@ -6,10 +6,16 @@ int N, M;
 int dx[8] = {0,1,1,1,0,-1,-1,-1};
 int dy[8] = {-1,-1,0,1,1,1,0,-1};
 
+bool check_valid(int x, int y) {
+  return (0 <= y && y < N && 0 <= x && y < M);
+}
+
 void search_lake(int x, int y) {
   check[y][x] = true;
   for (int i = 0; i < 8; i++) {
-    if (Y[y+dy[i]][x+dx[i]] == 'W' && !check[y+dy[i]][x+dx[i]]) {
+    int nx = x + dx[i];
+    int ny = y + dy[i];
+    if (check_valid(nx, ny) && Y[ny][nx] == 'W' && !check[ny][nx]) {
       search_lake(x+dx[i], y+dy[i]);
     }
   }
@@ -23,9 +29,7 @@ int main() {
   for (int y = 0; y < N; y++) {
     for (int x = 0; x < M; x++) {
       scanf("%c\n", &Y[y][x]);
-      printf("%c",Y[y][x]);
     }
-    printf("\n");
   }
   int ans = 0;
   for (int y = 0; y < N; y++) {
@@ -36,6 +40,7 @@ int main() {
       }
     }
   }
+  
   printf("%d\n", ans);
   return 0;
 }
