@@ -1,6 +1,5 @@
 Curling 2.0
 Time Limit: 1000MS		Memory Limit: 65536K
-Total Submissions: 25117		Accepted: 10091
 
 Description
 
