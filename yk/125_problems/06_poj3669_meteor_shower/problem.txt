@@ -1,6 +1,5 @@
 Meteor Shower
 Time Limit: 1000MS		Memory Limit: 65536K
-Total Submissions: 24664		Accepted: 6379
 
 Description
 
